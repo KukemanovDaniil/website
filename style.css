@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+@font-face {
+    font-family: 'IntelOneMono';
+    src: url('content/fonts/IntelOneMono-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'IntelOneMono', sans-serif;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 50px;
+}
+
+/* STYLES */
+
+.main_container {
+    width: 700px;
+}
+
+.head_container {
+    max-width: 700px;
+    min-height: 300px;
+
+    padding: 35px;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    
+    background: white;
+    border-radius: 25px;
+}
+
+.head_avatar {
+    max-width: 200px;
+    max-height: 200px;
+
+    border-radius: 100%;
+
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0px 8px black;
+}
+
+
+
+.container {
+    max-width: 700px;
+    min-height: 10px;
+
+    padding: 35px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    margin-top: 25px;
+
+    background: white;
+    border-radius: 25px;
+}
+
+.container hr {
+    color: rgb(138, 138, 138);
+}
+
+.container h2 {
+    color: rgb(24, 24, 24);
+}
+.container h3 {
+    color: rgb(56, 56, 56);
+}
+
+
+
+.skill_container {
+    min-width: 10px;
+    min-height: 10px;
+    
+    display: flex;
+    gap: 15px;
+
+    background: white;
+    border-radius: 25px;
+    flex-wrap: wrap;
+}
+
+.skill_box {
+    padding: 15px;
+    
+    display: flex;
+    gap: 15px;
+    box-shadow: 0 0px 3px;
+
+    align-items: center;
+    flex-basis: calc(50% - 15px);
+
+    background: black;
+    border-radius: 15px;
+    flex-grow: 1
+}
+
+.skill_box img {
+    width: 45px;
+    height: 45px;
+}
+
+.skill_box h2 {
+    color: white;
+}
+
+
+
+.project_box {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+    background: black;
+    border-radius: 15px;
+    text-decoration: none;
+    box-shadow: 0 0px 8px black;
+    
+    flex-grow: 1;
+    flex-basis: calc(50% - 15px);
+}
+
+.project_info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+}
+
+.project_info h2 {
+    color: #ffffff;
+    font-size: 35px;
+}
+
+.project_info h3 {
+    color: #aaa;
+    font-size: 14px;
+}
