@@ -115,8 +115,8 @@ body {
 }
 
 .skill_box img {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
 }
 
 .skill_box h2 {
@@ -155,4 +155,20 @@ body {
 .project_info h3 {
     color: #aaa;
     font-size: 14px;
+}
+
+
+
+.my-custom-button {
+    background-color: #000000;
+    padding: 15px 15px;
+    border-radius: 15px;
+    box-shadow: 0 0px 8px black;
+
+    cursor: pointer;
+}
+
+.my-custom-button img {
+    width: 50px;
+    height: 50px;
 }
