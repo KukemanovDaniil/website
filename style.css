@@ -2,7 +2,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
     -webkit-user-select: none;
     user-select: none;
 }
@@ -20,125 +19,101 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding: clamp(20px, 5vh, 50px) 0; 
 }
 
-/* STYLES */
-
 .main_container {
-    width: 700px;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 16px; 
+}
+
+.head_container, 
+.container {
+    width: 100%;
+    min-height: 10px;
+    padding: clamp(20px, 4vw, 35px);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: white;
+    border-radius: 25px;
+}
+
+.container {
+    margin-top: 25px;
 }
 
 .head_container {
-    max-width: 700px;
-    min-height: 300px;
-
-    padding: 35px;
-    
-    display: flex;
     align-items: center;
-    flex-direction: column;
-    gap: 15px;
-    
-    background: white;
-    border-radius: 25px;
+    text-align: center;
 }
 
 .head_avatar {
-    max-width: 200px;
-    max-height: 200px;
-
-    border-radius: 100%;
-
     width: 100%;
+    max-width: 200px;
     height: auto;
-    box-shadow: 0 0px 8px black;
-}
-
-
-
-.container {
-    max-width: 700px;
-    min-height: 10px;
-
-    padding: 35px;
-    
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    
-    margin-top: 25px;
-
-    background: white;
-    border-radius: 25px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
 }
 
 .container hr {
-    color: rgb(138, 138, 138);
+    border: none;
+    border-top: 1px solid rgb(210, 210, 210);
 }
 
-.container h2 {
-    color: rgb(24, 24, 24);
-}
-.container h3 {
-    color: rgb(56, 56, 56);
-}
-
-
+.container h2 { color: rgb(24, 24, 24); }
+.container h3 { color: rgb(56, 56, 56); }
 
 .skill_container {
-    min-width: 10px;
-    min-height: 10px;
-    
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-
     background: white;
-    border-radius: 25px;
-    flex-wrap: wrap;
 }
 
 .skill_box {
     padding: 15px;
-    
     display: flex;
-    gap: 15px;
-    box-shadow: 0 0px 3px;
-
     align-items: center;
-    flex-basis: calc(50% - 15px);
-
+    gap: 15px;
     background: black;
     border-radius: 15px;
-    flex-grow: 1
+    box-shadow: 0 2px 5px rgba(0,0,0,0.8);
 }
 
 .skill_box img {
-    width: 55px;
-    height: 55px;
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
 }
 
 .skill_box h2 {
     color: white;
+    font-size: 18px;
+    word-break: break-word;
 }
-
-
 
 .project_box {
     padding: 20px;
     display: flex;
     align-items: center;
     gap: 20px;
-    
     background: black;
     border-radius: 15px;
     text-decoration: none;
-    box-shadow: 0 0px 8px black;
-    
-    flex-grow: 1;
-    flex-basis: calc(50% - 15px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.project_box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
+}
+
+.project_box img {
+    width: 70px;
 }
 
 .project_info {
@@ -146,61 +121,46 @@ body {
     flex-direction: column;
     gap: 5px;
     text-align: left;
+    width: 100%;
 }
 
 .project_info h2 {
     color: #ffffff;
-    font-size: 35px;
+    font-size: clamp(14px, 4vw, 22px); 
+    line-height: 1.2;
+    word-break: break-word;
 }
 
 .project_info h3 {
     color: #aaa;
-    font-size: 14px;
+    font-size: 10px;
 }
-
-
 
 .my-custom-button {
     background-color: #000000;
-    padding: 15px 15px;
+    padding: 12px;
     border-radius: 15px;
-    box-shadow: 0 0px 8px black;
-
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
 }
 
 .my-custom-button img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 
-
-
-
-@media (max-width: 700px) {
-    .main_container {
-        width: 100%;
-        padding: 0 12px;
-    }
-         
-    .skill_box, .project_box {
-        flex-basis: 100%;
-    }
-     
+@media (max-width: 600px) {
     .project_box {
         flex-direction: column;
         align-items: flex-start;
+        gap: 12px;
     }
-
-    .head_container, .container {
-        padding: 20px;
-    }
-
-    .project_info h2 {
-        font-size: 24px;
-    }
-
-    .skill_box, .my-custom-button {
-        flex-wrap: wrap; 
+    
+    .my-custom-button {
+        width: 100%;
     }
 }
